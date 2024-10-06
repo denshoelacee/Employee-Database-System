@@ -16,6 +16,7 @@ if(isset($_POST['addemployee'])){
         $sql = "INSERT INTO employees (firstname, middlename, lastname, barangay, municipality,city, job,department) 
                             VALUES ('$firstname','$middlename' ,'$lastname','$barangay', '$municipality', '$city', '$job' , '$department')";
         
+<<<<<<< HEAD
 
         if(mysqli_query($con, $sql)){
             $_SESSION['message'] = "Employee added successfully!";
@@ -27,6 +28,14 @@ if(isset($_POST['addemployee'])){
 
         }
         header('location:updateemployee.php');
+=======
+        if(mysqli_query($con, $sql)){
+            $_SESSION['message'] = "Employee added successfully!";
+        } else {
+            $_SESSION['message'] = "Something went wrong while adding contact: " . mysqli_error($con);
+        }
+        header('location:editdeleteemployee.php');
+>>>>>>> 39006aeec2c5308060f35a8f587d41ea1d66e019
     }     
 
 //EDIT EMPLOYEE
@@ -79,6 +88,7 @@ if(isset($_POST['editdepartment'])){
     
     $sql = "UPDATE department SET deptname='$departmentname' WHERE deptID='$id'";
 
+<<<<<<< HEAD
     $checkdepartmentname = "SELECT * FROM department WHERE deptname = '$departmentname'";
     $checkNameResult = mysqli_query($con, $checkdepartmentname);
 
@@ -89,6 +99,8 @@ if(isset($_POST['editdepartment'])){
          exit();
      }
  
+=======
+>>>>>>> 39006aeec2c5308060f35a8f587d41ea1d66e019
     if(mysqli_query($con, $sql)){
             $_SESSION['message'] = "Department updated successfully!";
         } else {
@@ -104,6 +116,7 @@ if(isset($_POST['adddepartment'])){
         // Insert the new department
         $sql = "INSERT INTO department (deptname) 
                             VALUES ('$departmentname')";
+<<<<<<< HEAD
 
         $checkdepartmentname = "SELECT * FROM department WHERE deptname = '$departmentname'";
         $checkNameResult = mysqli_query($con, $checkdepartmentname);
@@ -115,6 +128,9 @@ if(isset($_POST['adddepartment'])){
              exit();
          }
      
+=======
+        
+>>>>>>> 39006aeec2c5308060f35a8f587d41ea1d66e019
         if(mysqli_query($con, $sql)){
             $_SESSION['message'] = "Department added successfully!";
         } else {
@@ -141,4 +157,13 @@ if(isset($_GET['deletedepartment'])) {
     // after deleting the user from the database, return to index.php
     header('location: departments.php');
 }
+<<<<<<< HEAD
 ?>
+=======
+
+?>
+
+
+
+
+>>>>>>> 39006aeec2c5308060f35a8f587d41ea1d66e019

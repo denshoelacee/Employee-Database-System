@@ -135,7 +135,11 @@
                     <form action="adddata.php" method="POST">
                         <div class="modal-body">
                                 <div class="form-group">
+<<<<<<< HEAD
                                     <label class="text"> Departmen ID </label>
+=======
+                                    <label class="text"> Employee ID </label>
+>>>>>>> 39006aeec2c5308060f35a8f587d41ea1d66e019
                                     <input type="text" class="form-control" name="deptID"readonly required value="<?php echo $index['deptID']; ?>">
                                 </div>
                                 <div class="form-group">

@@ -16,6 +16,7 @@
 
 <body>
 <div class="wrapper">
+<<<<<<< HEAD
 <?php 
 include_once('database.php'); // Correctly include the database connection
 include_once('sidebar.php'); 
@@ -47,6 +48,13 @@ include_once('sidebar.php');
             // Close the database connection
             $con->close(); // Use $con instead of $conn
             ?>
+=======
+<?php include_once('sidebar.php'); ?>
+    <div class="container-fluid">
+    <p class="text-black p-4"> > <a class="text-black"href="employee.php">Profile</a></p>
+        <div class="container p-4" style=" box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;">
+            <h2> User </h2>
+>>>>>>> 39006aeec2c5308060f35a8f587d41ea1d66e019
         </div>  
     </div>
 </div>
@@ -57,4 +65,8 @@ include_once('sidebar.php');
         
     <script src="script.js"></script>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 39006aeec2c5308060f35a8f587d41ea1d66e019

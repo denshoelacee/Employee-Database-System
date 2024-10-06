@@ -21,6 +21,7 @@
                     <?php
                         
                         include('database.php');
+<<<<<<< HEAD
                         $limit = 10; // LIMIT PER PAGE
                         $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
                         $offset = ($page - 1) * $limit;
@@ -37,6 +38,13 @@
                         ON e.department = d.deptname
                         LIMIT $limit OFFSET $offset
                         " ;  
+=======
+                        $sql = "SELECT e.empID, e.firstname,e.middlename,e.lastname,e.barangay,e.municipality,e.city,e.job, e.department, d.deptID,d.deptname
+                        FROM employees e 
+                        INNER JOIN department d
+                        ON e.department = d.deptname;  
+                        ";  
+>>>>>>> 39006aeec2c5308060f35a8f587d41ea1d66e019
                 
                         $query = mysqli_query($con, $sql);  
                     ?>
@@ -83,6 +91,7 @@
                                             </tbody>
                                         </table>
                                 </div>
+<<<<<<< HEAD
                                 <nav aria-label="Page navigation">
                                     <ul class="pagination">
                                         <li class="page-item <?php if($page <= 1) echo 'disabled'; ?>">
@@ -98,6 +107,8 @@
                                         </li>
                                     </ul>
                                 </nav>
+=======
+>>>>>>> 39006aeec2c5308060f35a8f587d41ea1d66e019
                         </div>
                 </main>
             </div>
