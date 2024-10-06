@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Poppins&display=swap');
 
 ::after,
 ::before {
@@ -16,8 +16,8 @@ li {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-}
+    font-family: Kanit, sans-serif;
+    font-family: Poppins, sans-serif;}
 
 .wrapper {
     display: flex;
@@ -169,5 +169,8 @@ a.sidebar-link:hover {
     width: 40px;
 }
 
-
-
+#label-title{
+    position:absolute;
+    margin-left:3px;
+    
+}

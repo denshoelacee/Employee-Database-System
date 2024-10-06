@@ -135,7 +135,7 @@
                     <form action="adddata.php" method="POST">
                         <div class="modal-body">
                                 <div class="form-group">
-                                    <label class="text"> Employee ID </label>
+                                    <label class="text"> Departmen ID </label>
                                     <input type="text" class="form-control" name="deptID"readonly required value="<?php echo $index['deptID']; ?>">
                                 </div>
                                 <div class="form-group">

@@ -9,9 +9,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 
 <body>
+               
     <div class="wrapper">
     <?php include_once('sidebar.php'); ?>
         <div class="main">
@@ -23,9 +25,9 @@
                         <hr style="margin:5px">
                         <form method="POST" action="adddata.php">
                             <div style="display: flex; flex-wrap: wrap; gap: 50px; padding: 20px; justify-content: center;">
-                                    <div style="display: flex; flex-direction: row; gap: 20px;">
-                                        <label for="departmentname">Department Name</label>
-                                        <input type="text" name="departmentname" placeholder="Enter Department Name" required>
+                                    <div>
+                                        <label for="departmentname" id="label-title"> Department Name </label>
+                                        <input type="text" name="departmentname" placeholder="  Enter Department Name"required style="padding: 5px; margin-top:25px;">
                                     </div>
                             </div>
 

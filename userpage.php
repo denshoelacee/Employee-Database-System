@@ -16,11 +16,37 @@
 
 <body>
 <div class="wrapper">
-<?php include_once('sidebar.php'); ?>
+<?php 
+include_once('database.php'); // Correctly include the database connection
+include_once('sidebar.php'); 
+?>
     <div class="container-fluid">
-    <p class="text-black p-4"> > <a class="text-black"href="employee.php">Profile</a></p>
-        <div class="container p-4" style=" box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;">
+    <p class="text-black p-4"> > <a class="text-black" href="employee.php">Profile</a></p>
+        <div class="container p-4  " style=" box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;">
             <h2> User </h2>
+
+            <?php
+            // Fetch users from the database
+            $query = "SELECT * FROM users";
+            $result = $con->query($query); // Use $con instead of $conn
+
+            if ($result->num_rows > 0) {
+                // Display each user in a card
+                while ($user = $result->fetch_assoc()) {
+                    echo '<div class="card mb-3 flex-col" style="width: 18rem;">';
+                    echo '<div class="card-body">';
+                    echo '<h5 class="card-title">User ID: ' . $user['userID'] . '</h5>';
+                    echo '<p class="card-text">Email: ' . $user['email'] . '</p>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            } else {
+                echo '<p>No users found.</p>';
+            }
+
+            // Close the database connection
+            $con->close(); // Use $con instead of $conn
+            ?>
         </div>  
     </div>
 </div>

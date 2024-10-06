@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="styles.css">
+    
 <aside id="sidebar">
             <div class="d-flex bg-primary">
                 <button class="toggle-btn" type="button">
@@ -85,8 +86,8 @@
                                 <img src="account.png" class="avatar img-fluid" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end rounded col">
-                                <a href="userpage.php" class="dropdown-item">Profile</a>
-                                <a href="log-in.php" class="dropdown-item">Log-out</a>
+                                <a href="userpage.php" class="dropdown-item">Admin Panel</a>
+                                <a href="login-form.php" class="dropdown-item">Log-out</a>
                             </div>
                         </li>
                     </ul>

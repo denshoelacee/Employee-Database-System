@@ -16,12 +16,17 @@ if(isset($_POST['addemployee'])){
         $sql = "INSERT INTO employees (firstname, middlename, lastname, barangay, municipality,city, job,department) 
                             VALUES ('$firstname','$middlename' ,'$lastname','$barangay', '$municipality', '$city', '$job' , '$department')";
         
+
         if(mysqli_query($con, $sql)){
             $_SESSION['message'] = "Employee added successfully!";
+            header('location: updateemployee.php');
+
         } else {
             $_SESSION['message'] = "Something went wrong while adding contact: " . mysqli_error($con);
+            header('location: updateemployee.php');
+
         }
-        header('location:editdeleteemployee.php');
+        header('location:updateemployee.php');
     }     
 
 //EDIT EMPLOYEE
@@ -74,6 +79,16 @@ if(isset($_POST['editdepartment'])){
     
     $sql = "UPDATE department SET deptname='$departmentname' WHERE deptID='$id'";
 
+    $checkdepartmentname = "SELECT * FROM department WHERE deptname = '$departmentname'";
+    $checkNameResult = mysqli_query($con, $checkdepartmentname);
+
+    if(mysqli_num_rows($checkNameResult) > 0){
+        // if an id is exist mo show rag message 
+         $_SESSION['message'] = "Department already exists!";
+         header('location:departments.php');
+         exit();
+     }
+ 
     if(mysqli_query($con, $sql)){
             $_SESSION['message'] = "Department updated successfully!";
         } else {
@@ -89,7 +104,17 @@ if(isset($_POST['adddepartment'])){
         // Insert the new department
         $sql = "INSERT INTO department (deptname) 
                             VALUES ('$departmentname')";
-        
+
+        $checkdepartmentname = "SELECT * FROM department WHERE deptname = '$departmentname'";
+        $checkNameResult = mysqli_query($con, $checkdepartmentname);
+
+        if(mysqli_num_rows($checkNameResult) > 0){
+            // if an id is exist mo show rag message 
+             $_SESSION['message'] = "Department already exists!";
+             header('location:departments.php');
+             exit();
+         }
+     
         if(mysqli_query($con, $sql)){
             $_SESSION['message'] = "Department added successfully!";
         } else {
@@ -116,9 +141,4 @@ if(isset($_GET['deletedepartment'])) {
     // after deleting the user from the database, return to index.php
     header('location: departments.php');
 }
-
 ?>
-
-
-
-
